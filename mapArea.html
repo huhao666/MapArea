@@ -1,73 +1,67 @@
 <!DOCTYPE html>
 <html lang="en">
+  <style type="text/css">
+    .box div{
+      cursor: pointer;
+    }
+  </style>
   <body>
-    <p>请点击图像上的星球，把它们放大。</p>
-
+    <p>热区</p>
     <img src="eg_planets.jpg" border="0" usemap="#planetmap" alt="Planets" id="bd" />
     <map name="planetmap" id="planetmap">
       <area
         shape="rect"
         coords="0,1,108,263"
         href="#1"
-        id="top"
-        onclick="showBorder('top')"
+        id="top0,1,108,263"
+        onclick="showBorder('top0,1,108,263')"
       />
       <area
         shape="rect"
         coords="120,151,138,171"
         href="#2"        
-        id="top1"
-        onclick="showBorder('top1')"
+        id="top120,151,138,171"
+        onclick="showBorder('top120,151,138,171')"
       />
       <area
         shape="rect"
         coords="163,126,193,155"
         href="#3"
-        id="top2"
-        onclick="showBorder('top2')"
+        id="top163,126,193,155"
+        onclick="showBorder('top163,126,193,155')"
       />
     </map>
     <div id="border" style="display:none; position:absolute;border:2px solid #FF0000; "></div>
-    <p>
-      <b>注释：</b>img 元素中的 "usemap" 属性引用 map 元素中的 "id" 或 "name"
-      属性（根据浏览器），所以我们同时向 map 元素添加了 "id" 和 "name" 属性。
-    </p>
+ 
 
-    <div style="height:100px;background-color: yellow;overflow-y: auto;">
-      <ul>
-        <div id="1" style="background-color: pink;" onclick="showBorder('top')">
-          <li>1</li>
-          <li>1</li>
-          <li>1</li>
-          <li>1</li>
-          <li>1</li>
-          <li>1</li>
-          <li>1</li>
-          <li>1</li>
+    <div class="box" style="height:100px;background-color: yellow;overflow-y: auto;">
+        <div id="1" onclick="showBorder('top0,1,108,263')">
+          <table>
+            <tr style="background-color:pink;height: 50px">
+              <td>100</td>
+              <td>100</td>
+              <td>100</td>
+            </tr>
+          </table>
         </div>
-        <div id="2" style="background-color: green;" onclick="showBorder('top1')">
-          <li>2</li>
-          <li>2</li>
-          <li>2</li>
-          <li>2</li>
-          <li>2</li>
-          <li>2</li>
-          <li>2</li>
-          <li>2</li>
+        <div id="2" onclick="showBorder('top120,151,138,171')">
+          <table>
+          <tr style="background-color: green;height: 50px">
+            <td>200</td>
+            <td>200</td>
+            <td>200</td>
+          </tr>
+          </table>
         </div>
-        <div id="3" style="background-color: blue;" onclick="showBorder('top2')">
-          <li>3</li>
-          <li>3</li>
-          <li>3</li>
-          <li>3</li>
-          <li>3</li>
-          <li>3</li>
-          <li>3</li>
-          <li>3</li>
-          <li>3</li>
-        </div>
-        
-      </ul>
+        <div id="3" onclick="showBorder('top163,126,193,155')">
+          <table>
+          <tr style="background-color: blue;height: 50px">
+            <td>300</td>
+            <td>300</td>
+            <td>300</td>
+          </tr>
+          </table>
+        </div> 
     </div>
     <script type="text/javascript">
       function showBorder(id){
