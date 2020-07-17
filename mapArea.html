@@ -7,48 +7,51 @@
   </style>
   <body>
     <p>热区</p>
-    <img src="eg_planets.jpg" border="0" usemap="#planetmap" id="bd" />
-    <map name="planetmap" id="planetmap">
-      <area
-        shape="rect"
-        coords="0,1,108,263"
-        href="#1"
-        id="top0,1,108,263"
-        onclick="showBorder('top0,1,108,263')"
-      />
-      <area
-        shape="rect"
-        coords="120,151,138,171"
-        href="#2"        
-        id="top120,151,138,171"
-        onclick="showBorder('top120,151,138,171')"
-      />
-      <area
-        shape="rect"
-        coords="163,126,193,155"
-        href="#3"
-        id="top163,126,193,155"
-        onclick="showBorder('top163,126,193,155')"
-      />
-    </map>
-    <div id="border" style="display:none; position:absolute;border:2px solid #FF0000; "></div>
- 
-
+    <div style="width:1000px;height: 600px;border: 1px solid black;overflow: scroll;position: relative;">
+      <div style="position: absolute;background-color: red">
+        <img src="eg_planets1.jpg" border="0" usemap="#planetmap" id="bd"/>
+        <map name="planetmap" id="planetmap">
+          <area
+            shape="rect"
+            coords="950,71,988,107"
+            href="#1"
+            id="top950,71,988,107"
+            onclick="showBorder('top950,71,988,107')"
+          />
+          <area
+            shape="rect"
+            coords="954,159,991,191"
+            href="#2"
+            id="top954,159,991,191"
+            onclick="showBorder('top954,159,991,191')"
+          />
+          <area
+            shape="rect"
+            coords="952,250,990,287"
+            href="#3"
+            id="top952,250,990,287"
+            onclick="showBorder('top952,250,990,287')"
+          />
+        </map>
+        <div id="border" style="display:none; position:absolute;border:2px solid #FF0000; "></div>
+      </div>  
+    </div>
+    
     <div class="box" style="height:100px;background-color: yellow;overflow-y: auto;">
           <table>
-            <tr id="1" onclick="showBorder('top0,1,108,263')" style="background-color:pink;height: 50px">
+            <tr id="1" onclick="showBorder('top950,71,988,107')" style="background-color:pink;height: 50px">
               <td>100</td>
               <td>100</td>
               <td>100</td>
             </tr>
 
-            <tr id="2" onclick="showBorder('top120,151,138,171')" style="background-color: green;height: 50px">
+            <tr id="2" onclick="showBorder('top954,159,991,191')" style="background-color: green;height: 50px">
               <td>200</td>
               <td>200</td>
               <td>200</td>
             </tr>
 
-          <tr id="3" onclick="showBorder('top163,126,193,155')" style="background-color: blue;height: 50px">
+          <tr id="3" onclick="showBorder('top952,250,990,287')" style="background-color: blue;height: 50px">
             <td>300</td>
             <td>300</td>
             <td>300</td>
@@ -66,8 +69,8 @@
         var coords = obj.coords.split(",");
          
         div.style.display = "block";
-        div.style.left = offset.x + parseInt(coords[0]) + "px";
-        div.style.top = offset.y + parseInt(coords[1]) + "px";
+        div.style.left = offset.x + parseInt(coords[0])-6 + "px"; 
+        div.style.top = offset.y + parseInt(coords[1])-52 + "px";
         div.style.width = parseInt(coords[2]) - parseInt(coords[0]) + "px";
         div.style.height = parseInt(coords[3]) - parseInt(coords[1]) + "px";
       }
