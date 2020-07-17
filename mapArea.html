@@ -7,7 +7,7 @@
   </style>
   <body>
     <p>热区</p>
-    <img src="eg_planets.jpg" border="0" usemap="#planetmap" alt="Planets" id="bd" />
+    <img src="eg_planets.jpg" border="0" usemap="#planetmap" id="bd" />
     <map name="planetmap" id="planetmap">
       <area
         shape="rect"
@@ -35,33 +35,25 @@
  
 
     <div class="box" style="height:100px;background-color: yellow;overflow-y: auto;">
-        <div id="1" onclick="showBorder('top0,1,108,263')">
           <table>
-            <tr style="background-color:pink;height: 50px">
+            <tr id="1" onclick="showBorder('top0,1,108,263')" style="background-color:pink;height: 50px">
               <td>100</td>
               <td>100</td>
               <td>100</td>
             </tr>
-          </table>
-        </div>
-        <div id="2" onclick="showBorder('top120,151,138,171')">
-          <table>
-          <tr style="background-color: green;height: 50px">
-            <td>200</td>
-            <td>200</td>
-            <td>200</td>
-          </tr>
-          </table>
-        </div>
-        <div id="3" onclick="showBorder('top163,126,193,155')">
-          <table>
-          <tr style="background-color: blue;height: 50px">
+
+            <tr id="2" onclick="showBorder('top120,151,138,171')" style="background-color: green;height: 50px">
+              <td>200</td>
+              <td>200</td>
+              <td>200</td>
+            </tr>
+
+          <tr id="3" onclick="showBorder('top163,126,193,155')" style="background-color: blue;height: 50px">
             <td>300</td>
             <td>300</td>
             <td>300</td>
           </tr>
-          </table>
-        </div> 
+        </table> 
     </div>
     <script type="text/javascript">
       function showBorder(id){
