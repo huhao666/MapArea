@@ -7,9 +7,9 @@
   </style>
   <body>
     <p>热区</p>
-    <div style="width:1000px;height: 600px;border: 1px solid black;overflow: scroll;position: relative;">
-      <div style="position: absolute;background-color: red">
-        <img src="eg_planets1.jpg" border="0" usemap="#planetmap" id="bd"/>
+    <div style="width:1200px;height: 600px;border: 1px solid black;overflow: scroll;position: relative;">
+      <div style="position: absolute;">
+        <img src="eg_planets1.jpg" border="0" usemap="#planetmap"/>
         <map name="planetmap" id="planetmap">
           <area
             shape="rect"
@@ -61,28 +61,17 @@
     <script type="text/javascript">
       function showBorder(id){
         console.log(id)
-        var img = document.getElementById("bd");
         var div = document.getElementById("border");
         var obj = document.getElementById(id);
-        var offset = getOffset(img);
         console.log(obj)
         var coords = obj.coords.split(",");
          
         div.style.display = "block";
-        div.style.left = offset.x + parseInt(coords[0])-6 + "px"; 
-        div.style.top = offset.y + parseInt(coords[1])-52 + "px";
         div.style.width = parseInt(coords[2]) - parseInt(coords[0]) + "px";
         div.style.height = parseInt(coords[3]) - parseInt(coords[1]) + "px";
+        div.style.left = parseInt(coords[0]) + "px"; 
+        div.style.top = parseInt(coords[1]) + "px";
       }
-      function getOffset(obj){
-        var x = obj.offsetLeft, y = obj.offsetTop;
-        while(obj.offsetParent){
-            obj = obj.offsetParent;
-            x += obj.offsetLeft;
-            y += obj.offsetTop;
-        }
-        return {x : x, y : y};
-      };
     </script>
   </body>
 </html>
